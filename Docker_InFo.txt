@@ -1,0 +1,79 @@
+Docker Concepts : 
+
+Pain points that docker solves :
+- No need to maintain dependencies on every machine.
+- No need to manage software version dependencied for all instances.
+- Same setup configuration can be easily maintained across all instances
+
+So if docker setup runs on developer environment then it will for sure run the setup on all other test and 
+production environment
+
+- So no need to do a tedious installation procedure on all the instances
+- Multiple versions of same software can run on single machine on different nodes parallely.
+- Once work is completed on a specific container we can remove entire development environment in one go without 
+	individually removing every dependency. We can just drop the node or container.
+
+----------------------------------------------------------------------------------------------------------------------
+	
+Container : 
+- A container is an isolated environment to run an application.
+- Techinically Container is just a process like other process.
+- Its differnt than a vm which used entire copy of operation system and resource intensive where as container do the
+	same task but instead of flashing a new operating system it used existing host OS to do task hence its light weight.
+- As it used host OS ity can start quickly and do not need a lot hardware resources.
+- Due to this we can run a lot containers parallely than compare to VM on same machine.
+
+----------------------------------------------------------------------------------------------------------------------
+
+Docker Architecture  :
+
+- It has a Client server architecture. And communication between client and server is carried out by REST APIs.
+- Server is also called "Docker Engine", which sits in background an takes care of building and running 
+	docker Containers.
+- All Container on the host shares same Kernel of the Operating system of the Host.
+- Hence for example we can run linux container on only on linux machin beacause linux container need linux kernel
+	to execute the container. However we can use Linux as well as windows container on windows as windows can be 
+	shipped with linux kernel(WSL). In case of MAC it dose not support containerised application. Hence docker on MAC 
+	uses a light weight linux VM to run linux container.
+	
+----------------------------------------------------------------------------------------------------------------------
+
+Docker Work Flow
+
+Step 1 : Dockerize the Intented Application 
+	- In this step we make a small change in application so that it can be run by docker.
+	- we Add a dockerfile to it. A dockerfile is plain text file which contains a instruction read by docker so that it
+		can package it to be run on docker. This Image contains everything that application need to run.
+	- The content of package may be 
+		1. A cut down OS
+		2. A runtime environment (a node)
+		3. Application files
+		4. Third - Party libs 
+		5. Environment Variables
+		Hence a docker file is needed to have every dependecy information in it so that docker can package that
+		application into image. And once a image is ready we can tell docker to start a container using that image.
+	- Once an image is propely working the we can push that image on Docker Hub to be pulled on another machines.
+		Docker to Docker hub is similar like git to GitHub. It stores all ddevelopment images across all versions,
+		to be pulled on and worked on later.
+	- Once Dockerfile is added in setup you can build docker file command
+
+		docker build -t <tag to indetify docker image> <location of the dockerfile>
+		"docker build -t hello-docker ."
+	
+	- Once its built successfully we can not see image in setup or project folder docker stores it at different locations
+		in multiple files as an image. 
+	
+	- To list all the docker images present in machine
+
+		"docker image ls"
+
+Step 2 : Run Docker Image
+	- To run docker Image can simply run following command provided that image is present in the machine.
+
+	"docker run <image name>"
+	"docker run hello-docker"
+
+	
+	
+
+	
