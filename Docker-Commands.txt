@@ -1,0 +1,34 @@
+1. Docker build image :
+
+docker build -t <tag to indetify docker image> <location of the dockerfile>
+"docker build -t hello-docker ."
+
+2. Run Image :
+
+"docker run <image name>"
+"docker run hello-docker"
+
+3. Delete an image
+
+docker rmi <image name>
+"docker rmi hello-docker" OR "docker rmi hello-docker -f"
+
+4. List all Images
+
+"docker images"       OR
+"docker image -ls"
+
+5. List all contaiers
+
+"docker ps" 
+"docker ps -a" to list all containers(running or terninated)
+
+6. Pull a image from docker hub
+
+docker <remot container name>
+docker pull ubuntu
+
+7. To access a container shell
+
+docker run -it <image>      -it to run interactive mode 
+"docker rin -it ubuntu"
