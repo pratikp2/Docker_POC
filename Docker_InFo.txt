@@ -75,3 +75,20 @@ Step 2 : Run Docker Image
 
 ----------------------------------------------------------------------------------------------------------------------
 
+Docker Volume and Persistant data :
+
+Persistant Data : 
+		- Is is data persisted by docker throughout application lifecycle, which will be present when application will
+		stop and start again.
+		- Example is customer records, application database and logs.
+
+Non Persistant Data :
+		- It is the type data which is removed or deleted upon container stop.
+
+Volumes :
+	Volume is memory which is independent of the start and stop of container. It is recomended due to following reason.
+		1. Volume is independent of container life cycle.
+		2. They can mapped to external storage.
+		3. Multiple container can share single volume.   
+
+	Generally way to use use a volue is simple. Create a volume and map that that volume to the container.

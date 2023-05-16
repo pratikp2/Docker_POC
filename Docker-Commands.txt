@@ -25,10 +25,41 @@ docker rmi <image name>
 
 6. Pull a image from docker hub
 
-docker <remot container name>
+docker <remot image name>
 docker pull ubuntu
 
 7. To access a container shell
 
 docker run -it <image>      -it to run interactive mode 
-"docker rin -it ubuntu"
+"docker run -it ubuntu"
+-i = interactive, t = tty or shell, d = detached 
+
+8. To access volume menu
+
+"docker volume --help" OR 
+"docker volume <command> --help"
+
+9. To create volume 
+
+docker volume create <name for volume>
+"docker volume create myContainerVolume"
+
+10 To list all created volume
+
+"docker volume ls"
+
+11. To find more info about volume
+
+docker volume inspect <volume name>
+"docker volume inspect myContainerVolume"
+
+12. To remove your volume
+
+docker volume rm <volume name>
+"docker volume rm myContainerVolume"
+
+13. Mount a volume to the container 
+
+docker run -itd --name <name of the container> mount source=<name of the volume>, target=/<path for target inside container> <image>  
+docker run -itd --name myContainer mount source=/myContainerVolume, target=/vol alpine      OR
+docker run -itd --name myContainer -v /myContainerVolume:/vol alpine
