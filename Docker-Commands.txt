@@ -63,3 +63,13 @@ docker volume rm <volume name>
 docker run -itd --name <name of the container> mount source=<name of the volume>, target=/<path for target inside container> <image>  
 docker run -itd --name myContainer mount source=/myContainerVolume, target=/vol alpine      OR
 docker run -itd --name myContainer -v /myContainerVolume:/vol alpine
+
+14. Docker inspect network and all the container IPs connected to docker0(virtual docker network)
+
+docker inspect <name of bridge>
+docker inspect bridge
+
+15. To create Docker network
+
+docker network create <network name>
+docker network ls                       -- to list all network
