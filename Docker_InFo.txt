@@ -73,7 +73,13 @@ Step 2 : Run Docker Image
 	"docker run <image name>"
 	"docker run hello-docker"
 
-----------------------------------------------------------------------------------------------------------------------
+Step 3 : To Delete docker image simply Run Following command
+	
+	"docker rmi <image name>"
+	"docker rmi hello-docker" OR "docker rmi -f"
+
+	
+	
 
 Docker Persistant - Docker persistance for data can be managed by below 4 methods.
 
