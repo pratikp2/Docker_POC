@@ -1,8 +1,20 @@
+FROM - To copy an Image present in Docker Hub
+    "FROM gcc:4.9"
+
+ENV - To set environment variables in docker contaier
+    "MONGO_DB_USER_NAME=admin"
+
+RUN - Run any Linux Command before container start to do all sorts of preprocessing via commands required for container to run
+    RUN g++ main.cpp -o myapp
+
+COPY - Copy setup files inside image from host while building it
+    COPY . /app
+
+CMD - CMD is an entry point commands unlike RUN CMD is used only once. So using this command means telling docker file that run 
+    this command as an entrypoint to trigger container operation.
+    CMD ["./myapp"]
+
 ADD
-
-ENV
-
-COPY
 
 ENTRYPOINT
 
@@ -19,4 +31,3 @@ USER
 VOLUME
 
 WORKDIR
-

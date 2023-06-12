@@ -16,6 +16,7 @@ production environment
 ----------------------------------------------------------------------------------------------------------------------
 	
 Container : 
+- Container is a active instance of docker image.
 - A container is an isolated environment to run an application.
 - Techinically Container is just a process like other process.
 - Its differnt than a vm which used entire copy of operation system and resource intensive where as container do the
@@ -73,13 +74,7 @@ Step 2 : Run Docker Image
 	"docker run <image name>"
 	"docker run hello-docker"
 
-Step 3 : To Delete docker image simply Run Following command
-	
-	"docker rmi <image name>"
-	"docker rmi hello-docker" OR "docker rmi -f"
-
-	
-	
+----------------------------------------------------------------------------------------------------------------------
 
 Docker Persistant - Docker persistance for data can be managed by below 4 methods.
 
@@ -187,5 +182,4 @@ The none network :
 Reference : 
 https://www.youtube.com/watch?v=bKFMS5C4CG0&ab_channel=NetworkChuck
 
-
-
+----------------------------------------------------------------------------------------------------------------------
