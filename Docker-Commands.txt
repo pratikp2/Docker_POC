@@ -73,3 +73,22 @@ docker inspect bridge
 
 docker network create <network name>
 docker network ls                       -- to list all network
+
+----------------------------------------------------------------------------------------------------------------------
+
+Push Docker Image into docker Hub
+
+1. Creation of docker Repository : 
+    - Login into Docker Hub account.
+    - Locate and click Create repository button. Upon clickig "Create Repository" options will be shown.
+    - In Options add Repository name, select private or public option, and add additional information and click create.
+    - Once creation is done repo is available. Note the docker push command syntax to push in to repo
+            docker push <docker user name>/<repo name>:<tagname>
+
+2. Push Repository from command line :
+    - Open command prompt and fire command "docker login". You will be asked your docker account credentials. Enter those.
+    - Now to directly push command 1st identify the pre build image by running command "docker image ls".
+    - Note the image name and image tag from the provided list.
+    - push the docker image via mentiones command
+            docker push <docker user name>/<repo name>:<tagname>
+    - Verify that image has been pushed in the docker hub.
