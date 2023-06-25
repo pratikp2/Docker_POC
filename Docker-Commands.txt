@@ -1,6 +1,6 @@
 1. Docker build image :
 
-docker build -t <tag to indetify docker image> <location of the dockerfile>
+docker build -t <Name for docker image> -f <Name of docker file>
 "docker build -t hello-docker ."
 
 2. Run Image :

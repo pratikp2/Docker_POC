@@ -76,6 +76,26 @@ Step 2 : Run Docker Image
 
 ----------------------------------------------------------------------------------------------------------------------
 
+Docker Multistage Build : 
+	A multi-stage build is a process that allows you to break the steps in building a Docker image into multiple stages.
+This will enable you to create images that include only the dependencies that are necessary for the desired functionality
+of the final application, cutting down on both time and space.
+
+			-----	Docker File -----
+
+FROM alpine AS stage1
+LABEL maintainer="Collabnix"
+RUN echo "Welcome to Docker Labs!" > /opt/index.html
+
+FROM nginx:alpine
+LABEL maintainer="Collabnix"
+COPY --from=stage1 /opt/index.html /usr/share/nginx/html/
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+			----- End of Docker file -----
+
+----------------------------------------------------------------------------------------------------------------------
+
 Docker Persistant - Docker persistance for data can be managed by below 4 methods.
 
 Persistant Data : 
