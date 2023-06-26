@@ -4,6 +4,17 @@ FROM - To copy an Image present in Docker Hub
 ENV - To set environment variables in docker contaier
     "MONGO_DB_USER_NAME=admin"
 
+ENTRYPOINT - The ENTRYPOINT instruction make your container run as an executable. ENTRYPOINT can be configured in two forms:
+    Exec Form : ENTRYPOINT [“executable”, “param1”, “param2”]
+    Shell Form : ENTRYPOINT command param1 param2
+    If an image has an ENTRYPOINT if you pass an argument it, while running container it wont override the existing 
+    entrypoint, it will append what you passed with the entrypoint.To override the existing ENTRYPOINT you should user
+    –entrypoint flag when running container.
+
+CMD - CMD is an entry point commands unlike RUN CMD is used only once. So using this command means telling docker file that run 
+    this command as an entrypoint to trigger container operation.
+    CMD ["./myapp"]
+
 RUN - Run any Linux Command before container start to do all sorts of preprocessing via commands required for container to 
     run. RUN g++ main.cpp -o myapp || The RUN instruction execute command on top of the below layer and create a new layer.
     RUN instruction can be wrote in two forms:
@@ -17,17 +28,6 @@ COPY - Copy setup files inside image from host while building it. COPY takes in 
 Add - COPY and ADD are both Dockerfile instructions that serve similar purposes. They let you copy files from a specific location 
     into a Docker image. ADD lets you supports 2 other sources. First, you can use a URL instead of a local file / directory.
     Secondly, you can extract a tar file from the source directly into the destination.
-
-CMD - CMD is an entry point commands unlike RUN CMD is used only once. So using this command means telling docker file that run 
-    this command as an entrypoint to trigger container operation.
-    CMD ["./myapp"]
-
-ENTRYPOINT - The ENTRYPOINT instruction make your container run as an executable. ENTRYPOINT can be configured in two forms:
-    Exec Form : ENTRYPOINT [“executable”, “param1”, “param2”]
-    Shell Form : ENTRYPOINT command param1 param2
-    If an image has an ENTRYPOINT if you pass an argument it, while running container it wont override the existing 
-    entrypoint, it will append what you passed with the entrypoint.To override the existing ENTRYPOINT you should user
-    –entrypoint flag when running container.
 
 EXPOSE
 
